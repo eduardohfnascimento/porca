@@ -9,6 +9,9 @@ gem 'bootstrap-sass', '~> 3.3.7'
 # jQuery
 gem 'jquery-rails'
 
+# Administrate
+gem "administrate"
+
 # ----- Default Rails gems: ----- #
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'

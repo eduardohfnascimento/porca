@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+      resources :courses
+      resources :posts
+      resources :professors
+
+      root to: "courses#index"
+    end
   resources :posts
   resources :courses
   resources :professors
