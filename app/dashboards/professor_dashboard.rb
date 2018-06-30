@@ -45,7 +45,7 @@ class ProfessorDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how professors are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(professor)
-  #   "Professor ##{professor.id}"
-  # end
+  def display_resource(professor)
+    "#{professor.name}"
+  end
 end
