@@ -17,6 +17,7 @@ class PostDashboard < Administrate::BaseDashboard
     material_type: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    user: Field::BelongsTo,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -41,6 +42,7 @@ class PostDashboard < Administrate::BaseDashboard
     :link,
     :semester,
     :material_type,
+    :user,
     :created_at,
     :updated_at,
   ].freeze
@@ -49,6 +51,7 @@ class PostDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :user,
     :professor,
     :course,
     :name,
