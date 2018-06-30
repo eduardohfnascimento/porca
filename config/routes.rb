@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :courses
       resources :posts
       resources :professors
+      resources :users
 
       root to: "courses#index"
     end
