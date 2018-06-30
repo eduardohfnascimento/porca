@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :posts
+  resources :courses
+  resources :professors
   # Root URL
   root 'pages#index'
 
