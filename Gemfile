@@ -12,7 +12,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 
 # Administrate
-gem "administrate"
+gem 'administrate'
 
 # SQLite in development
 group :development, :test do
