@@ -9,14 +9,14 @@ Rails.application.routes.draw do
 
       root to: "courses#index"
     end
-  #resources :posts
+  resources :posts
   #resources :courses
   resources :professors
   # Root URL
   root 'courses#index'
 
   # Routes to pages
-  get 'contribute' => 'pages#contribute'
+  get 'contribute' => 'posts#new'
   get 'about' => 'pages#about'
   get 'faq' => 'pages#faq'
   get 'user/:id' => 'pages#contribuicoes'

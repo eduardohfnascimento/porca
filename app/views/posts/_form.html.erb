@@ -11,33 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="input-group">
+    <span class="input-group-addon">Nome</span>
+     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :link %>
+  <div class="input-group">
+    <span class="input-group-addon">Link</span>
     <%= form.text_field :link %>
   </div>
 
-  <div class="field">
-    <%= form.label :semester %>
+  <div class="input-group">
+    <span class="input-group-addon">Semestre</span>
     <%= form.text_field :semester %>
   </div>
 
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :professor_id %>
+  <div class="input-group">
+    <span class="input-group-addon">Professor</span>
     <%= form.text_field :professor_id %>
   </div>
 
-  <div class="field">
-    <%= form.label :course_id %>
+  <div class="input-group">
+    <span class="input-group-addon">Matéria</span>
     <%= form.text_field :course_id %>
   </div>
 
