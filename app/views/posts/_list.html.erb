@@ -1,9 +1,4 @@
 <div id="filterrific_results">
-
-  <div>
-    <%#= page_entries_info posts %>
-  </div>
-
   <table class='table table-striped'>
     <thead>
       <tr>
@@ -24,6 +19,5 @@
       <% end %>
     <tbody>
   </table>
+  <%= paginate @posts %>
 </div>
-
-<%#= will_paginate posts %>

@@ -6,6 +6,9 @@ ruby '2.4.1'
 # for filtering tables
 gem 'filterrific'
 
+# for pagination
+gem 'kaminari'
+
 #for user autentication
 gem 'devise'
 # Twitter UI components
