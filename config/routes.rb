@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
       root to: "courses#index"
     end
-  #resources :posts
+  resources :posts
   #resources :courses
   resources :professors
   # Root URL
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # After selecting the course
   get 'provas/:course_alias' => 'posts#by_course'
   # Routes to pages
-  get 'contribute' => 'pages#contribute'
+  get 'contribute' => 'posts#new'
   get 'about' => 'pages#about'
   get 'faq' => 'pages#faq'
   get 'user/:id' => 'pages#contribuicoes'

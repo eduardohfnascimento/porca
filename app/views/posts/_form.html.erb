@@ -11,34 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<form class="form-horizontal" role="form">
+
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Nome</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="name">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link %>
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Link</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="link"">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :semester %>
-    <%= form.text_field :semester %>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Semestre</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="semester">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type %>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Professor</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" name="professor_id">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :professor_id %>
-    <%= form.text_field :professor_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :course_id %>
-    <%= form.text_field :course_id %>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Matéria</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" name="course_id">
+    </div>
   </div>
 
   <div class="actions">
