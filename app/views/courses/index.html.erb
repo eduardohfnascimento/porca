@@ -3,25 +3,28 @@
     <h3 class="panel-title">Selecione a Disciplina</h3>
   </div>
   <div class="panel-body">
-    <%= form_for_filterrific @filterrific do |f| %>
-      <div>
-        Busca
-        <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
-        <%= f.text_field(
-          :search_query,
-          class: 'filterrific-periodically-observed'
-        ) %>
-      </div>
-      <div>
-        Semestre
-        <%= f.select(
-          :with_semester,
-          @filterrific.select_options[:with_semester],
-          { include_blank: '- Any -' }
-        ) %>
-      </div>
-    <% end %>
-  </div>
+    <div class="row">
+      <%= form_for_filterrific @filterrific do |f| %>
+        <div class="input-group col-8">
+          <span class="input-group-addon">Nome/Apelido</span>
+          <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+          <%= f.text_field(
+            :search_query,
+            class: 'filterrific-periodically-observed form-control'
+          ) %>
+        </div>
+        <div class="input-group col-4">
+          <span class="input-group-addon">Semestre</span>
+          <%= f.select(
+            :with_semester,
+            @filterrific.select_options[:with_semester],
+            { include_blank: '' },
+            { :class => 'form-control' }
+          ) %>
+        </div>
+      <% end %>
+    </div> <%# end row %>
+  </div> <%# end panel-body %>
   <%= render(
     partial: 'courses/list',
     locals: { courses: @courses }

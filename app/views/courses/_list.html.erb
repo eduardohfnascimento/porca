@@ -9,7 +9,7 @@
     </thead>
     <tbody>
       <% courses.each do |course| %>
-        <tr href='/admin/courses/<%= course.id %>'>
+        <tr href='/provas/<%= course.alias %>'>
           <td><%= course.alias %></td>
           <td><%= course.name %></td>
           <td><%= course.semester %></td>

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # Root URL
   root 'courses#index'
 
+  # After selecting the course
+  get 'provas/:course_alias' => 'posts#by_course'
   # Routes to pages
   get 'contribute' => 'pages#contribute'
   get 'about' => 'pages#about'
