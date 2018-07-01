@@ -1,30 +1,29 @@
 <div class="row">
-    <div class = "jumbotron">
-    HEADER
-    </div>
+  <div class="col-xs-12">
+  <div class = "page-header">
+    <h1>Busca</h1>
+  </div>
+  </div>
 </div>
 <!-end of junbletron-!>
 
 <div class="row">
-    <div class="col-xs-6 col-lg-4">
-                <%= form_for_filterrific @filterrific do |f| %>
-                    Disciplina
-                    <%= f.select(
-                        :with_course_id,
-                        @filterrific.select_options[:with_course_id],
-                            { include_blank: '- Disciplina -' }
-                    ) %>
-                    <%# add an automated spinner to your form when the list is refreshed %>
-                    <%#= render_filterrific_spinner %>
-                <% end %>
-         
-    </div>
-    <div class="col-xs-12 col-sm-6 col-lg-8">
-        
-                <%= render(
-                  partial: 'posts/list',
-                  locals: { posts: @posts }
-                ) %>
-            
-    </div>
+  <div class="col-xs-6 col-lg-4">
+    <%= form_for_filterrific @filterrific do |f| %>
+      Disciplina
+      <%= f.select(
+        :with_course_id,
+        @filterrific.select_options[:with_course_id],
+          { include_blank: '- Disciplina -' }
+      ) %>
+        <%# add an automated spinner to your form when the list is refreshed %>
+        <%#= render_filterrific_spinner %>
+    <% end %>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-lg-8">
+    <%= render(
+      partial: 'posts/list',
+        locals: { posts: @posts }
+      ) %>
+  </div>
 </div>
