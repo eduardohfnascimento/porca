@@ -11,7 +11,16 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-top">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Adicionar uma Prova', contribute_path %>
+        <li class="dropdown"> 
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contribuir<span class="caret"></span></a> 
+          <ul class="dropdown-menu"> 
+            <li><a href="/contribute">Adicionar Prova</a></li> 
+            <li role="separator" class="divider"></li> 
+            <li><a href="/admin/courses/new">Adicionar Disciplina</a></li> 
+            <li role="separator" class="divider"></li> 
+            <li><a href="/admin/professors/new">Adicionar Professor</a></li> 
+          </ul> 
+        </li> 
         <li><%= link_to 'Sobre', about_path %></li>
         <li><%= link_to 'FAQ', faq_path %></li>
       </ul>
