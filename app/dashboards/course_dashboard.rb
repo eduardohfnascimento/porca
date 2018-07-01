@@ -14,6 +14,7 @@ class CourseDashboard < Administrate::BaseDashboard
     semester: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    posts: Field::HasMany,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,6 +26,7 @@ class CourseDashboard < Administrate::BaseDashboard
     :alias,
     :name,
     :semester,
+    :posts,
     #:created_at,
   ].freeze
 
@@ -33,7 +35,7 @@ class CourseDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :alias,
     :name,
-    :semester,
+    :posts,
     #:created_at,
     #:updated_at,
   ].freeze

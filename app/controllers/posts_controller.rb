@@ -8,8 +8,23 @@ class PostsController < ApplicationController
   end
 
   def by_course
-    course = Course.where(alias: params[:course_alias]).take
-    @posts = Post.where("course_id = ?", course.id)
+    @course = Course.where(alias: params[:course_alias]).take
+
+    @filterrific = initialize_filterrific(
+      Post,
+      params[:filterrific],
+      select_options: {
+        #with_professor_id: Professors.with_course(course.id),
+        #with_semester_gte: Post.with_semester_gte,
+      },
+      available_filters: [:search_query, :with_course_id1],
+    ) or return
+    @posts = @filterrific.find.page(params[:page])
+ 
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /posts/1
@@ -74,6 +89,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :link, :semester, :professor_id, :course_id)
+      params.permit(:name, :link, :semester, :professor_id, :course_id)
     end
 end
