@@ -1,6 +1,9 @@
 class Course < ApplicationRecord
   has_many :posts
 
+  validates :name, presence: true, uniqueness: true
+  validates :alias, presence: true, uniqueness: true
+
   filterrific(
     available_filters: [
       :search_query,
