@@ -4,8 +4,25 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @filterrific = initialize_filterrific(
+      Course,
+      params[:filterrific],
+      select_options: {
+        with_semester: Course.semesters_for_select,
+      },
+      persistence_id: 'shared_key',
+      default_filter_params: {},
+      available_filters: [:search_query, :with_semester],
+    ) or return
+    @courses = @filterrific.find.page(params[:page])
+ 
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
+
+  
 
   # GET /courses/1
   # GET /courses/1.json
