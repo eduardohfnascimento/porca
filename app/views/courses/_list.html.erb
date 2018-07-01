@@ -1,0 +1,23 @@
+<div id="filterrific_results">
+
+  <div>
+    <%= page_entries_info courses # provided by will_paginate %>
+  </div>
+
+  <table>
+    <tr>
+      <th></th>
+      <th>Nome</th>
+      <th>Semestre</th>
+    </tr>
+    <% courses.each do |course| %>
+      <tr>
+        <td><%= course.alias %></td>
+        <td><%= link_to(course.name, course_path(course)) %></td>
+        <td><%= course.semester %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= will_paginate courses # provided by will_paginate %>

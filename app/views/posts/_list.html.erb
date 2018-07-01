@@ -1,0 +1,29 @@
+<div id="filterrific_results">
+
+  <div>
+    <%#= page_entries_info posts %>
+  </div>
+
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Link</th>
+        <th>Disciplina</th>
+        <th>Professor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% posts.each do |post| %>
+        <tr>
+          <td><%= post.name %></td>
+          <td><%= post.link %></td>
+          <td><%= post.course.name %></td>
+          <td><%= post.professor.name %></td>
+        </tr>
+      <% end %>
+    <tbody>
+  </table>
+</div>
+
+<%#= will_paginate posts %>

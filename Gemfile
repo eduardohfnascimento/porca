@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+# for filtering tables
+gem 'filterrific'
+
 #for user autentication
 gem 'devise'
 # Twitter UI components

@@ -4,37 +4,27 @@
     </div>
 </div>
 <!-end of junbletron-!>
-<div class="row">
-    <div class="col-xs-3">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <p>prova</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-6">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <p>professores</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-3">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <p>materias</p>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-begin row 2-!>
 <div class="row">
-    <div class="col-xs-3">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <p>teste</p>
-            </div>
-        </div>
+    <div class="col-xs-6 col-lg-4">
+                <%= form_for_filterrific @filterrific do |f| %>
+                    Disciplina
+                    <%= f.select(
+                        :with_course_id,
+                        @filterrific.select_options[:with_course_id],
+                            { include_blank: '- Disciplina -' }
+                    ) %>
+                    <%# add an automated spinner to your form when the list is refreshed %>
+                    <%#= render_filterrific_spinner %>
+                <% end %>
+         
+    </div>
+    <div class="col-xs-12 col-sm-6 col-lg-8">
+        
+                <%= render(
+                  partial: 'posts/list',
+                  locals: { posts: @posts }
+                ) %>
+            
     </div>
 </div>

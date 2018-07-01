@@ -7,4 +7,16 @@ class Post < ApplicationRecord
   validates :semester, length: {maximum: 6}
 
   default_scope -> {order(created_at: :desc)}
+
+  filterrific(
+    available_filters: [
+      :with_course_id,
+    ]
+  )
+
+  scope :with_course_id, lambda { |course_ids|
+    where(course_id: [*course_ids])
+  }
+
+  #scope :with_course_id, -> { where(course_id: ?, course_id)}
 end
