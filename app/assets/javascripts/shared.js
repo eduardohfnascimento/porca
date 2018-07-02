@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.table-hover tr').click(function() {
+    $('body').on('click', '.table-hover tr', function() {
         var href = $(this).attr("href");
         if(href) {
             window.location = href;
